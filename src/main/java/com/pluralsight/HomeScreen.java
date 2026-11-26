@@ -8,7 +8,18 @@ public class HomeScreen {
     // Display the home screen menu.
     public static void menu() {
         Scanner myScanner = new Scanner(System.in);
-        boolean done = false;
+        boolean exit = false;
+        String orderScreen = """
+                -------------------
+                |   ORDER SCREEN   |
+                -------------------
+                |o 1) Add Item     |
+                |o 2) Add Drink    |
+                |o 3) Add Main Side|
+                |o 4) Checkout     |
+                |o 0) Cancel Order |
+                -------------------
+                """;
 
         do {
             // Prompt the user to answer if they would like to order or exit.
@@ -18,7 +29,7 @@ public class HomeScreen {
             // Re-prompt until the user provides an explicit "yes" or "no".
             while (!(userInput.equals("yes") || userInput.equals("no"))) {
                 if (userInput.isEmpty()) {
-                    System.out.print("Please write something, enter Yes/No: ");
+                    System.out.print("Input cannot be empty, enter Yes/No: ");
                 } else {
                     System.out.print("Invalid Input, please enter Yes/No: ");
                 }
@@ -28,16 +39,17 @@ public class HomeScreen {
             // Routes valid input to start a new order or to exit the application.
             switch (userInput) {
                 case "yes" -> {
+                    System.out.print("\n" + orderScreen + "\n");
                     OrderScreen.menu();
                 }
                 case "no" -> {
-                    System.out.println("Thanks for coming, hope to see you again soon!");
-                    done = true;
+                    System.out.println("Thanks for coming! Have a great day.");
+                    exit = true;
                 }
                 default -> {
                     System.out.println("That was a mistake");
                 }
             }
-        } while (!done);
+        } while (!exit);
     }
 }
