@@ -1,4 +1,8 @@
 package com.pluralsight;
 
 public class Main {
+
+    static void main(String[] args) {
+        HomeScreen.menu();
+    }
 }
