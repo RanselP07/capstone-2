@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.util.Scanner;
 
 // Home Screen
-public class HomeScreen {
+public class HomeScreen extends OrderScreen {
 
     // Display the home screen menu.
     public static void menu() {
@@ -43,7 +43,7 @@ public class HomeScreen {
                     OrderScreen.menu();
                 }
                 case "no" -> {
-                    System.out.println("Thanks for coming! Have a great day.");
+                    System.out.print("Thanks for coming! Have a great day.");
                     exit = true;
                 }
                 default -> {
