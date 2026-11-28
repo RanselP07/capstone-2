@@ -3,6 +3,7 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class OrderScreen {
+
     //region ----MENU----
 
     // Display the order screen menu.
@@ -49,8 +50,6 @@ public class OrderScreen {
                 }
                 case 2 -> {
                     System.out.println("Add Drinks");
-                    Drink drink = new Drink(4, "small", "Sprite");
-                    System.out.println(drink.getSummary());
                 }
                 case 3 -> {
                     System.out.println("Add Sides");
@@ -67,4 +66,23 @@ public class OrderScreen {
 
     //endregion
 
+    public void addEmpanada(){
+
+    }
+
+    public static Drink addDrink(Scanner myScanner){
+        int quantity = UserInput.quantity(myScanner);
+        String size = UserInput.size(myScanner);
+        String flavor = UserInput.type(myScanner);
+
+        return new Drink(quantity, size, flavor);
+    }
+
+    public void addSide(){
+
+    }
+
+    public void checkout(){
+
+    }
 }
