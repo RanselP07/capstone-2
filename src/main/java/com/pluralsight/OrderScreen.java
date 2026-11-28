@@ -3,10 +3,11 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class OrderScreen {
+    //region ----MENU----
+
     // Display the order screen menu.
     public static void menu() {
         Scanner myScanner = new Scanner(System.in);
-        boolean exit = false;
         int input = 5;
 
         do {
@@ -48,6 +49,8 @@ public class OrderScreen {
                 }
                 case 2 -> {
                     System.out.println("Add Drinks");
+                    Drink drink = new Drink(4, "small", "Sprite");
+                    System.out.println(drink.getSummary());
                 }
                 case 3 -> {
                     System.out.println("Add Sides");
@@ -61,4 +64,7 @@ public class OrderScreen {
             }
         } while (!(input == 4 || input == 0));
     }
+
+    //endregion
+
 }
